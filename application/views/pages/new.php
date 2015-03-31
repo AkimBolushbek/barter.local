@@ -1,2 +1,1 @@
-
-    <?= Modules::run('news/view', true, $url) ?>
+<?= Modules::run('news/view', true, $url) ?>

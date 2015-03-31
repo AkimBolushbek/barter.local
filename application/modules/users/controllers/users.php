@@ -13,13 +13,163 @@ class Users extends MX_Controller {
 
     public function index() {
         $this->load->helper('url');
+    }
 
-        if (!$this->session->userdata('logged')) {
-            redirect('admin/login');
-        } else {
-            redirect('admin/main');
+
+    public function login() {
+        $this->load->helper('url');
+        $this->load->view('front/login');
+
+        $this->form_validation->set_rules('username', 'Логин', 'required');
+        $this->form_validation->set_rules('password', 'Пароль', 'required');
+
+        if ($this->form_validation->run() == true)
+        {
+            //check to see if the user is logging in
+            //check for "remember me"
+            $remember = (bool) $this->input->post('remember');
+
+
+            if ($this->model->login($this->input->post('username'), $this->input->post('password'), $remember))
+            {
+                echo 'asfasf';
+
+                $this->session->set_flashdata('message', $this->module->messages());
+                redirect('/', 'welcome');
+            }
+            else
+            {
+                //if the login was un-successful
+                //redirect them back to the login page
+                $this->session->set_flashdata('message', $this->ion_auth->errors());
+                redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
+            }
+        }
+        else
+        {
+            //the user is not logging in so display the login page
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+            $this->data['identity'] = array('name' => 'identity',
+                'id' => 'identity',
+                'type' => 'text',
+                'value' => $this->form_validation->set_value('identity'),
+            );
+            $this->data['password'] = array('name' => 'password',
+                'id' => 'password',
+                'type' => 'password',
+            );
+
+            //$this->_render_page('auth/login', $this->data);
         }
     }
+
+    function create_user()
+    {
+        $this->data['title'] = "Create User";
+/*
+        if (!$this->module->logged_in() || !$this->module->is_admin())
+        {
+            redirect('auth', 'refresh');
+        }*/
+
+        $tables = $this->config->item('tables','ion_auth');
+
+        //validate form input
+        $this->form_validation->set_rules('username','User Name', 'required');
+        $this->form_validation->set_rules('first_name', 'First Name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+        $this->form_validation->set_rules('email', 'email', 'required|valid_email|is_unique['.$tables['users'].'.email]');
+        $this->form_validation->set_rules('phone', 'email', 'required');
+        $this->form_validation->set_rules('company', 'company', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[' . 3 . ']|max_length[' . 10 . ']|matches[password_confirm]');
+        $this->form_validation->set_rules('password_confirm', 'Confirm', 'required');
+
+        if ($this->form_validation->run() == true)
+        {
+            $username = strtolower('username');
+            $email    = strtolower($this->input->post('email'));
+            $password = $this->input->post('password');
+
+            $additional_data = array(
+                'first_name' => $this->input->post('first_name'),
+                'last_name'  => $this->input->post('last_name'),
+                'company'    => $this->input->post('company'),
+                'phone'      => $this->input->post('phone'),
+            );
+        }
+        if ($this->form_validation->run() == true && $this->module->register($username, $password, $email, $additional_data))
+        {
+            //check to see if we are creating the user
+            //redirect them back to the admin page
+            $this->session->set_flashdata('message', $this->module->messages());
+            redirect("auth", 'refresh');
+        }
+        else
+        {
+            //display the create user form
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors() ? validation_errors() : ($this->module->errors() ? $this->module->errors() : $this->session->flashdata('message')));
+
+            $this->data['username'] = array(
+                'name'  => 'username',
+                'id'    => 'username',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('username'),
+            );
+
+            $this->data['first_name'] = array(
+                'name'  => 'first_name',
+                'id'    => 'first_name',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('first_name'),
+            );
+            $this->data['last_name'] = array(
+                'name'  => 'last_name',
+                'id'    => 'last_name',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('last_name'),
+            );
+            $this->data['email'] = array(
+                'name'  => 'email',
+                'id'    => 'email',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('email'),
+            );
+            $this->data['company'] = array(
+                'name'  => 'company',
+                'id'    => 'company',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('company'),
+            );
+            $this->data['phone'] = array(
+                'name'  => 'phone',
+                'id'    => 'phone',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('phone'),
+            );
+            $this->data['password'] = array(
+                'name'  => 'password',
+                'id'    => 'password',
+                'type'  => 'password',
+                'value' => $this->form_validation->set_value('password'),
+            );
+            $this->data['password_confirm'] = array(
+                'name'  => 'password_confirm',
+                'id'    => 'password_confirm',
+                'type'  => 'password',
+                'value' => $this->form_validation->set_value('password_confirm'),
+            );
+
+            $this->_render_page('users/create_user', $this->data);
+        }
+    }
+
+
+
+
+
 
     public function view($for_front = false, $url = false) {
         $data['module_name'] = $this->module_name;
@@ -60,10 +210,9 @@ class Users extends MX_Controller {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
 
-        echo $entry['username']; die();
+        //echo $entry['username']; die();
 
         if ($this->input->post('do') == $this->module . 'Edit') {
-            $this->form_validation->set_rules('username', 'username', 'required');
             $this->form_validation->set_rules('email', 'email', 'required|e-mail');
             $this->form_validation->set_rules('first_name', 'First Name', '');
             $this->form_validation->set_rules('last_name', 'Last Name', '');
@@ -73,65 +222,17 @@ class Users extends MX_Controller {
 
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('edit', $data);
-            } else {
-                $config['upload_path'] = './images/' . $this->module;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
-                $config['max_size'] = '5120';
-                $config['encrypt_name'] = true;
-
-                $this->load->library('upload', $config);
-
-                $image_data = $this->upload->data();
-                if ($_FILES['image']['name'] == '') {
-                    if ($this->input->post('tags')) {
-                        foreach ($this->input->post('tags') as $tag) {
-                            Modules::run('admin/set_tag', $tag, $id, $object);
-                        }
-                    }
-                    $this->model->update($id);
-                    $arr = array(
-                        'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                    );
-                    $this->session->set_userdata($arr);
-                    redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                } else {
-                    if (!$this->upload->do_upload('image')) {
-                        $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                        redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                    } else {
-                        $entry = $this->model->get_blogs($id);
-                        if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
-                            unlink('images/' . $this->module . '/' . $entry['image']);
-                            if ($this->input->post('tags')) {
-                                foreach ($this->input->post('tags') as $tag) {
-                                    Modules::run('admin/set_tag', $tag, $id, $object);
-                                }
-                            }
-                            $image_data = $this->upload->data();
-                            $this->model->update($id, $image_data['file_name']);
-                            $arr = array(
-                                'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                            );
-                            $this->session->set_userdata($arr);
-                            redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                        } else {
-                            if ($this->input->post('tags')) {
-                                foreach ($this->input->post('tags') as $tag) {
-                                    Modules::run('admin/set_tag', $tag, $id, $object);
-                                }
-                            }
-                            $image_data = $this->upload->data();
-                            $this->model->update($id, $image_data['file_name']);
-                            $arr = array(
-                                'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                            );
-                            $this->session->set_userdata($arr);
-                            redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                        }
-                    }
-                }
             }
-        } else {
+            else{
+                $this->users_model->update($id);
+                $arr = array(
+                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
+                );
+                $this->session->set_userdata($arr);
+                redirect('admin/' . $this->module . '/edit/' . $entry['id']);
+            }
+        }
+        else {
             $this->load->view('edit', $data);
         }
     }
@@ -145,51 +246,40 @@ class Users extends MX_Controller {
         }
     }
 
-    public function add() {
+    public function add()
+    {
         global $object;
         $object = 'blog';
         $data['title'] = 'Административная панель';
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
         if ($this->input->post('do') == $this->module . 'Add') {
-            $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('url', 'Чпу', 'required|trim|xss_clean|callback_check_url');
-            $this->form_validation->set_rules('text', 'Текст', 'trim|xss_clean');
-            $this->form_validation->set_rules('title', 'Мета title', 'trim|xss_clean');
-            $this->form_validation->set_rules('desc', 'Мета description', 'trim|xss_clean');
-            $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('date', 'Дата публикации', 'trim|xss_clean');
-
-            $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
+            $this->form_validation->set_rules('username', 'Логин', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('firs_name', 'Имя', 'trim|xss_clean');
+            $this->form_validation->set_rules('last_name', 'Фамилия', 'trim|xss_clean');
+            $this->form_validation->set_rules('email', 'email', 'trim|xss_clean');
+            $this->form_validation->set_rules('phone', 'Телефон', 'trim|xss_clean');
+            $this->form_validation->set_rules('company', 'Компания', 'trim|xss_clean');
 
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('add', $data);
-            } else {
-                $config['upload_path'] = './images/' . $this->module;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
-                $config['max_size'] = '5120';
-                $config['encrypt_name'] = true;
-
-                $this->load->library('upload', $config);
-
-                $image_data = $this->upload->data();
-                if (!$this->upload->do_upload('image')) {
-                    $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                    redirect('admin/' . $this->module . '/add');
-                } else {
-                    $image_data = $this->upload->data();
-                    $this->model->set($image_data['file_name']);
-
-                    $arr = array(
-                        'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
-                    );
-                    $this->session->set_userdata($arr);
-                    redirect('admin/' . $this->module . '/add');
-                }
             }
-        } else {
-            $this->load->view('add', $data);
+            else {
+                $arr = array(
+                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
+                );
+                $this->session->set_userdata($arr);
+                $insert_id = $this->users_model->set();
+                redirect('admin/' . $this->module . '/edit/' . $insert_id);
+            }
         }
+
+        else
+        {
+                $this->load->view('add', $data);
+        }
+
+
     }
 
     public function delete($id) {

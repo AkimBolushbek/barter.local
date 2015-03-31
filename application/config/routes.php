@@ -52,14 +52,6 @@ if (!defined('BASEPATH'))
 $route['default_controller'] = "front/main";
 //~~~~~~~~~~~~~~~~~~~~~~admin routes~~~~~~~~~~~~~~~~~~~~~
 
-$route['auth'] = 'user_authentication/user_login_show';
-
-$route['login'] = 'user_authentication';
-
-$route['123'] = 'uers';
-$route['users/regsitration'] = 'users/login';
-$route['users/login'] = 'users/login';
-
 
 $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';

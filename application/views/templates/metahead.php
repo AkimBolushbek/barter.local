@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="/css/slider.css">
         <link rel="stylesheet" href="/colorbox/colorbox.css">
         <link rel="stylesheet" href="/css/backcall.css">
+        <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
 
         <style type="text/css">
             #map-canvas{

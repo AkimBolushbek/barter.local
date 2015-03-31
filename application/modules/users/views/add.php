@@ -8,12 +8,7 @@
 <div class="page-header">
     <h2>Добавление записи в модуль "<?= $module_name ?>"</h2>
 </div>
-<?= form_open_multipart('admin/' . $module . '/add') ?>
-<div class="row" style="margin-bottom: 10px;">
-    <div class="col-md-12">
-        <button type="submit" class="btn btn-default">Добавить</button>
-    </div>
-</div>
+<?php echo form_open(uri_string());?>
 <div class="row" style="margin-bottom: 5px;">
     <div class="col-md-12">
         <?= validation_errors(); ?>
@@ -25,72 +20,39 @@
         ?>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="image">Главное изображение</label><br/>
-            <input required name='image' type="file" class="btn-file" id="image">
-            <p class="help-block">Выберите картинку</p>
-        </div>
-        <div class="form-group">
-            <label for="name">Название</label>
-            <input required name='name' value="<?= set_value('name') ?>" type="text" class="form-control name" id="name" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="url">ЧПУ</label>
-            <input required name='url' value="<?= set_value('url') ?>" type="text" class="form-control name_translit" id="url" placeholder="">
-        </div>
 
-        <div class="form-group">
-            <label for="date">Дата публикаци</label>
-            <div class='input-group date' id='date'>
-                <input name="date" type='text' value="<?= set_value('date') ?>" class="form-control" />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            </div>
-        </div>
-        <script>
-            $(function () {
-                $('#date').datetimepicker();
-            });
-        </script>
-    </div>
-    <div class="col-md-6">
-        <div class="checkbox">
-            <label>
-                <input name='active' type="checkbox"> Активен
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input name='title' value="<?= set_value('title') ?>" type="text" class="form-control" id="title" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="desc">Мета description</label>
-            <textarea name='desc' rows="5" class="form-control" id="desc" placeholder=""><?= set_value('desc') ?></textarea>
-        </div>
-        <div class="form-group">
-            <label for="keyw">Мета keywords</label>
-            <textarea name='keyw' rows="3" class="form-control" id="keyw" placeholder=""><?= set_value('keyw') ?></textarea>
-        </div>
-    </div>
-</div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="form-group">
-            <label for="text">Текст</label>
-            <textarea name="text" id="text" rows="30">
-                <?= set_value('text') ?>
-            </textarea>
+            <label for="name">Логин</label>
+            <input required name='username'  type="text" class="form-control" id="username">
         </div>
-        <script>
-            CKEDITOR.replace('text');
-        </script>
+        <div class="form-group">
+            <label for="name">Имя</label>
+            <input required name='first_name' type="text" class="form-control" id="first_name">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Фамилия</label>
+            <input required name='last_name'  type="text" class="form-control" id="last_name">
+        </div>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input required name='email'  type="text" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input required name='phone' type="text" class="form-control" id="phone" >
+        </div>
+        <div class="form-group">
+            <label for="company">Компания</label>
+            <input required name='company' type="text" class="form-control" id="company" >
+        </div>
     </div>
 </div>
 <div class="row" style="margin-top: 10px;">
     <div class="col-md-12">
         <input type="hidden" name="do" value="<?= $module ?>Add">
         <button type="submit" class="btn btn-default">Добавить</button>
-    </div>    
+    </div>
 </div>
-<?form_close(); ?>
+<?php echo form_close();?>

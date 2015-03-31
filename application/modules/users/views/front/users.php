@@ -1,13 +1,36 @@
-<div class="news_and_blog">
-    <div class="wrapper">
-        <h3 class="main_title">НОВОСТИ</h3>
-        <?php foreach ($entries as $entry): ?>
-            <div class="news_and_blog_item clearfix" style="width:100%">
-                <img src="/images/news/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>">
-                <h6><?= $entry['name'] ?><span><?= date('d.m.Y H:i', strtotime($entry['date'])) ?></span></h6>
-                <p><?= mb_strimwidth(strip_tags($entry['text']), 0, 300, "..."); ?></p>
-                <a href="/news/<?= $entry['url'] ?>">Перейти &gt;</a>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
+
+<table class="table table-bordered">
+    <?php if (is_array($entries)) {  ?>
+        <tr>
+            <td width="30px">#</td>
+            <td width="30%">Имя пользователя</td>
+            <td width="30%">e-mail</td>
+            <td>Имя</td>
+            <td width="30%">Фамилия</td>
+            <td>Телефон</td>
+            <td>Дата регистрации</td>
+            <td width="30px">Редактировать</td>
+            <td width="30px">Удалить</td>
+        </tr>
+        <?php
+        foreach ($entries as $entry):
+            ?>
+
+            <tr>
+                <td class="id" width="30px"><?= $entry['id'] ?></td>
+                <td width="30%"><?= $entry['username'] ?></td>
+                <td width="30%"><?= $entry['email'] ?></td>
+                <td width="30%"><?= $entry['first_name'] ?></td>
+                <td width="30%"><?= $entry['last_name'] ?></td>
+                <td width="30%"><?= $entry['phone'] ?></td>
+                <td><?= date('d.m.Y H:i', $entry['created_on'])?></td>
+                <td width="30px"><a href='/admin/<?= $module ?>/edit/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td width="30px"><a href='/admin/<?= $module ?>/delete/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-remove"></span></a></td>
+            </tr>
+            <?php
+        endforeach;
+    } else {
+        echo '<div class="alert alert-danger" role="alert"><strong>Oops! </strong>Записей в базе не найдено</div>';
+    }
+    ?>
+</table>
