@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Мар 27 2015 г., 04:23
--- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
+-- Host: 127.0.0.1
+-- Generation Time: Mar 31, 2015 at 10:55 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `travelshop`
+-- Database: `barter`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `admins`
+-- Table structure for table `admins`
 --
 
 DROP TABLE IF EXISTS `admins`;
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`)
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `allreviews`
+-- Table structure for table `allreviews`
 --
 
 DROP TABLE IF EXISTS `allreviews`;
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `allreviews` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
--- Дамп данных таблицы `allreviews`
+-- Dumping data for table `allreviews`
 --
 
 INSERT INTO `allreviews` (`id`, `name`, `text`, `date`, `ip`, `read`, `order`, `in_slider`, `active`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `allreviews` (`id`, `name`, `text`, `date`, `ip`, `read`, `order`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `allreviews_email`
+-- Table structure for table `allreviews_email`
 --
 
 DROP TABLE IF EXISTS `allreviews_email`;
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `allreviews_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `allreviews_email`
+-- Dumping data for table `allreviews_email`
 --
 
 INSERT INTO `allreviews_email` (`email`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `allreviews_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `backcall`
+-- Table structure for table `backcall`
 --
 
 DROP TABLE IF EXISTS `backcall`;
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `backcall` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Дамп данных таблицы `backcall`
+-- Dumping data for table `backcall`
 --
 
 INSERT INTO `backcall` (`id`, `name`, `phone`, `date`, `ip`, `read`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `backcall` (`id`, `name`, `phone`, `date`, `ip`, `read`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `backcall_email`
+-- Table structure for table `backcall_email`
 --
 
 DROP TABLE IF EXISTS `backcall_email`;
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `backcall_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `backcall_email`
+-- Dumping data for table `backcall_email`
 --
 
 INSERT INTO `backcall_email` (`email`) VALUES
@@ -149,7 +149,7 @@ INSERT INTO `backcall_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `blog`
+-- Table structure for table `blog`
 --
 
 DROP TABLE IF EXISTS `blog`;
@@ -171,13 +171,13 @@ CREATE TABLE IF NOT EXISTS `blog` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
--- Дамп данных таблицы `blog`
+-- Dumping data for table `blog`
 --
 
 INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `order`, `views`, `active`) VALUES
 (12, 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'jubilejnyj_20-yj_dubajskij_torgovyj_festival_puteshestvie_v_roskosh', '<p><span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь</span><br />\n<br />\n<span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">■ Двадцатый Дубайский торговый фестиваль под лозунгом &laquo;20 лет путешествий &ndash; из праздника в праздник&rdquo; пройдет с 1 января по 1 февраля 2015 и станет первым в череде ярких с</span><span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">обытий в Дубае в новом году.&nbsp;<br />\nВпервые фестиваль прошел в 1996 году; в настоящее время он превратился в самое продолжительное мероприятие такого рода в мире, в значительной мере способствуя продвижению Дубая как туристического направления и предлагая жителям города и туристам яркие впечатления. За период с 1996 по 2014 года фестиваль посетило приблизительно 56 млн. человек, а общая сумма затрат составила $ 40 млрд.<br />\n<br />\nТри составляющих успеха Дубайского торгового фестиваля &ndash; развлечения, шопинг и розыгрыш различных призов.&nbsp;<br />\n<br />\nДля привлечения к участию в фестивале как можно большего количества людей мероприятия проходят не только в торговых центрах, но и в общественных местах, на главных улицах города, например на Бульваре Мохаммеда Бин Рашида, а также в Ковровом оазисе, в историческом районе Шиндага, во Всемирной деревне и парках.&nbsp;<br />\n<br />\nКрасочные фестивальные мероприятия мирового уровня, рассчитанные на всех членов семьи, неизменно привлекают внимание как жителей города, так и туристов со всего мира.&nbsp;<br />\n<br />\nНеизменный хит &ndash; мюзикл MAMMA MIA &ndash; можно будет увидеть со 2 по 10 января 2015г. на сцене зала Шейха Рашида в Дубайском центре международной торговли. Это шоу посмотрело уже более 54 млн. зрителей во всем мире, ведь за время его существования было сделано 39 различных постановок на 14 языках.<br />\n<br />\nС 15 по 17 января на сцене Мадинат арены будет представлен классический балет &laquo;Ромео и Джульетта&raquo; в исполнении самой известной европейской труппы Балет Монте-Карло под руководством одного из лучших мировых хореографов Жана Кристофа Майо (Jean Chrostoph Maillot).<br />\n<br />\nЮбилейный фестиваль вновь подтвердит уникальные возможности лучшего в мире шопинга, уникального и разнообразного, будь то городские и традиционные рынки или первоклассные торговые центры. Дубай действительно является мировым центром шопинга, вторым после Лондона городом, по количеству представленных международных розничных брендов. В фестивале примут участие более 70 торговых центров и 6000 магазинов, а скидки на разные товары, начиная от золота, парфюмерии, одежды модных брендов, машин, электроники до текстиля и изделий ручной работы достигают 75%.<br />\nКроме того, будет представлены уникальные модные концепции, например Celebrity Pop-up Shop с коллекциями одежды от известных дизайнеров или владельцев брендов, ранее не представленными в ОАЭ. Здесь же пройдут показы мод, автограф-сессии и стайлинг-сессии. В течение трех недель в магазине будут попеременно представлены коллекции трех дизайнеров. Так, с 15 по 21 января 2015 известная американская актриса и дизайнер Николь Ричи представит свою ювелирную линию House of Harlow 1090. Украшения в ретро стиле из этой коллекции носят Мадонна и Эшли Симпсон. Celebrity Pop-up Shop расположится на пляже The Beach &ndash; Jumeirah Beach Residence.<br />\n<br />\nИ конечно, же, Дубайский торговый фестиваль славится лотереями крупных денежных призов, роскошных автомобилей и золота.&nbsp;<br />\n<br />\nМега лотерея Gold &amp; Jewellery Mega Raffle даст шанс выиграть призы на сумму до 15 млн. дирхам, включая золото весом до 100 кг и бриллианты общим весом до 40 карат. А в рамках мега лотереи Infinity Mega Raffle ежедневно будет разыгрываться приз, состоящий из двух автомобилей QX 60 и QX 50 и 100 000 дирхам. В ходе еженедельных розыгрышей этой лотереи будут также разыграны призы на сумму 2 млн. дирхам. Для участия необходимо приобрести лотерейный билет стоимостью 200 дирхам (ок $54).&nbsp;<br />\n<br />\nВо время Дубайского торгового фестиваля организаторы планируют попасть в Книгу рекордов Гиннеса, создав золотую цепь ручной работы длиной 5 км (&lsquo;Dubai celebration Chain&rdquo;). Всем желающим будет предоставлена возможность приобрести части этой цепи, так как они будут выставлены на продажу.&nbsp;</span></p>\n', '2016-01-01 06:00:00', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'd2480590815c9b77c37bb88443e72e86.jpg', 1, 0, 'on'),
 (14, 'Акция! Отдых со скидкой 35 % на двоих: 7 дней и 6 ночей в шикарных отелях Дубая.', 'akcija_otdyh_so_skidkoj_35__na_dvoih_7_dnej_i_6_nochej_v_shikarnyh_oteljah_dubaja.', '<p>Акция! Отдых со скидкой 35 % на двоих: 7 дней и 6 ночей в шикарных отелях Дубая.</p>\n', '1970-01-01 06:00:00', '', '', '', '1aff9f82eaf909c0ecf9feffeb079e37.jpg', 2, 0, 'on'),
-(15, 'Гоа', 'goa', '<p>Уважаемые друзья,&nbsp;<br />\nрады предложить Вам ГОРЯЩИЕ ТУРЫ в ГОА от 491 USD !!!&nbsp;<br />\nВЫЛЕТЫ 21.02, 28.02, 04.03 А/К SUNDAY AIRLINES</p>\n\n<p>В стоимость тура включено:&nbsp;<br />\n-авиабилет Алматы-Гоа-Алматы а/к Sunday Airlines,<br />\n-проживание в отеле один в двухместном номере,&nbsp;<br />\n-питание по концепции отеля, медицинская страховка,&nbsp;<br />\n-групповой трансфер,</p>\n\n<div class="text_exposed_show" style="display: inline; color: rgb(20, 24, 35); font-family: ''lucida grande'', tahoma, verdana, arial, sans-serif; line-height: 17.9400005340576px;">\n<p>Про Гоа:&nbsp;<br />\nГоа-самый маленький штат в Индии, абсолютно не похожий на остальную Индию, но вместе с этим и один из самых лучших мировых курортов, раскинувшийся на берегу Аравийского моря. Побережье на этом экзотическом курорте протянулось более чем на 110 км, образовав 40 великолепных пляжей. Считается, что Гоа очень популярен среди туристов сразу по нескольким причинам: во-первых, многих манят просторные золотые пляжи Гоа, протянувшиеся на многие километры вдоль потрясающих берегов Аравийского моря. Других туристов влекут древние памятники Индии, легко доступные во время одно-двухдневных экскурсий, организуемых из штата Гоа. Третьих в Гоа привлекает дешевизна отдыха. А смешение стилей, рас и культур делают Гоа непохожим на другие индийские штаты.</p>\n\n<p>СПЕШИТЕ! КОЛИЧЕСТВО МЕСТ ОГРАНИЧЕНО!&nbsp;<br />\nТУРЫ МОГУТ БЫТЬ ИЗМЕНЕНЫ и ПРИСПОСОБЛЕНЫ ПОД ПЕРСОНАЛЬНЫЙ ЗАПРОС!<br />\nПолучить более подробную, персональную информацию можно, отправив запрос по электронному адресу:&nbsp;<br />\ntour@travelshop.kg, tour1@travelshop.kg&nbsp;<br />\nа также по телефонам:&nbsp;<br />\n0312 66 21 21, 0701 66 21 21, 0554 66 21 21</p>\n</div>\n', '2015-02-16 06:00:00', 'гоа', 'Туры в Гоа из бишкека', 'туры, гоа, индия,бишкек', '92e9a63ca45f8f4c1361e9a4b14d877e.jpg', 3, 0, 'on'),
+(15, 'Гоа', 'goa', '<p>Уважаемые друзья,&nbsp;<br />\r\nрады предложить Вам ГОРЯЩИЕ ТУРЫ в ГОА от 491 USD !!!&nbsp;<br />\r\nВЫЛЕТЫ 21.02, 28.02, 04.03 А/К SUNDAY AIRLINES</p>\r\n\r\n<p>В стоимость тура включено:&nbsp;<br />\r\n-авиабилет Алматы-Гоа-Алматы а/к Sunday Airlines,<br />\r\n-проживание в отеле один в двухместном номере,&nbsp;<br />\r\n-питание по концепции отеля, медицинская страховка,&nbsp;<br />\r\n-групповой трансфер,</p>\r\n\r\n<div class="text_exposed_show" style="display: inline; color: rgb(20, 24, 35); font-family: ''lucida grande'', tahoma, verdana, arial, sans-serif; line-height: 17.9400005340576px;">\r\n<p>Про Гоа:&nbsp;<br />\r\nГоа-самый маленький штат в Индии, абсолютно не похожий на остальную Индию, но вместе с этим и один из самых лучших мировых курортов, раскинувшийся на берегу Аравийского моря. Побережье на этом экзотическом курорте протянулось более чем на 110 км, образовав 40 великолепных пляжей. Считается, что Гоа очень популярен среди туристов сразу по нескольким причинам: во-первых, многих манят просторные золотые пляжи Гоа, протянувшиеся на многие километры вдоль потрясающих берегов Аравийского моря. Других туристов влекут древние памятники Индии, легко доступные во время одно-двухдневных экскурсий, организуемых из штата Гоа. Третьих в Гоа привлекает дешевизна отдыха. А смешение стилей, рас и культур делают Гоа непохожим на другие индийские штаты.</p>\r\n\r\n<p>СПЕШИТЕ! КОЛИЧЕСТВО МЕСТ ОГРАНИЧЕНО!&nbsp;<br />\r\nТУРЫ МОГУТ БЫТЬ ИЗМЕНЕНЫ и ПРИСПОСОБЛЕНЫ ПОД ПЕРСОНАЛЬНЫЙ ЗАПРОС!<br />\r\nПолучить более подробную, персональную информацию можно, отправив запрос по электронному адресу:&nbsp;<br />\r\ntour@travelshop.kg, tour1@travelshop.kg&nbsp;<br />\r\nа также по телефонам:&nbsp;<br />\r\n0312 66 21 21, 0701 66 21 21, 0554 66 21 21</p>\r\n</div>\r\n', '2015-02-16 06:00:00', 'гоа', 'Туры в Гоа из бишкека', 'туры, гоа, индия,бишкек', '92e9a63ca45f8f4c1361e9a4b14d877e.jpg', 3, 0, 'on'),
 (16, 'Дубай', 'dubaj', '<div class="_5pbx userContent" style="line-height: 1.38; overflow: hidden;">\n<p>Друзья, мы продлили акцию на&nbsp;<a class="profileLink" href="https://www.facebook.com/BeSmart.KG" style="color: rgb(59, 89, 152); cursor: pointer; text-decoration: none;">BeSmart.KG</a>&nbsp;еще на одну неделю.&nbsp;<br />\nОтдых со скидкой 35 % на двоих: 7 дней и 6 ночей в шикарных отелях Дубая.&nbsp;<br />\n<a href="http://besmart.kg/event/travel-oae/" rel="nofollow" style="color: rgb(59, 89, 152); cursor: pointer; text-decoration: none;" target="_blank">http://besmart.kg/event/travel-oae/</a></p>\n</div>\n\n<div>\n<div>\n<div class="mtm" style="margin-top: 10px;">\n<div class="_6m2 _1zpr clearfix _dcs _4_w4 _59ap _2ec0" id="u_ps_0_0_9" style="zoom: 1; -webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 4px; position: relative; overflow: hidden; z-index: 0;">\n<div class="clearfix _2r3x" style="zoom: 1;">\n<div class="lfloat _ohe" style="float: left; width: 470px;">\n<div class="_6ks" style="line-height: 0; position: relative; z-index: 1;">\n<div class="_6l- __c_" style="position: relative;">\n<div class="uiScaledImageContainer _6m5 fbStoryAttachmentImage" style="position: relative; overflow: hidden; height: 246px; width: 470px; background-position: 50% 50%; background-repeat: no-repeat;"><a href="http://besmart.kg/event/travel-oae/" rel="nofollow" style="color: rgb(59, 89, 152); cursor: pointer; text-decoration: none;" target="_blank"><img alt="" class="img scaledImageFitWidth" src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQCs3znW-f2xecpC&amp;w=470&amp;h=246&amp;url=http%3A%2F%2Fbesmart.kg%2Fmedia%2Fupload%2Fdubai_oae_pfoto_2.jpg&amp;cfs=1&amp;upscale=1" style="border:0px; height:auto; min-height:100%; position:relative; width:470px" /></a></div>\n</div>\n</div>\n\n<div class="_3ekx">\n<div class="_6m3" style="font-size: 12px; height: auto; margin: 10px 12px; position: relative; max-height: 100px; color: rgb(20, 24, 35); font-family: ''lucida grande'', tahoma, verdana, arial, sans-serif;">\n<div class="mbs _6m6" style="margin-bottom: 5px; font-family: Georgia, ''lucida grande'', tahoma, verdana, arial, sans-serif; font-size: 18px; line-height: 22px; max-height: 110px; overflow: hidden; word-wrap: break-word; transition: color 0.1s ease-in-out; -webkit-transition: color 0.1s ease-in-out;"><a href="http://l.facebook.com/l.php?u=http%3A%2F%2Fbesmart.kg%2Fevent%2Ftravel-oae%2F&amp;h=lAQHr_6wf&amp;s=1" rel="nofollow" style="color: rgb(20, 24, 35); cursor: pointer; text-decoration: none; -webkit-transition: color 0.1s ease-in-out; transition: color 0.1s ease-in-out;" target="_blank">Travel Shop Отдых на двоих: 7 дней и 6 ночей в шикарных отелях ОАЭ</a></div>\n\n<div class="_6ma">\n<div class="_6m7" style="font-family: Helvetica; line-height: 16px; max-height: 80px; overflow: hidden;">В ОАЭ не бывает плохой погоды и низкого сезона &mdash; ведь здесь что в ноябре, что в июле роскошные отели для качественного отдыха и отличный шопинг...</div>\n\n<div class="_59tj" style="padding-top: 9px; position: relative;">\n<div class="_6lz _6mb ellipsis" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(145, 151, 163); font-size: 11px; line-height: 11px; text-transform: uppercase;">BESMART.KG</div>\n\n<div>&nbsp;</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n', '2015-02-16 05:00:00', 'Дубай', 'Горящие Туры в Дубай из Бишкек', 'Бишкек, туры, цены, авиабилеты Флай дубай', '0b96d2aa0772c3b510c73b91d11d0e2e.jpg', 0, 0, 'on'),
 (17, 'Акция на авиабилеты в Дубай!', 'akcija_na_aviabilety_fly_dubai_1__1', '<p><span style="font-size:18px"><span style="font-family:georgia,serif"><span style="color:#000080"><strong>Друзья, напоминаем об акции на авиабилеты &quot;FLY DUBAI&quot;1 + 1. При покупке одного билета по цене 559$, по маршруту Бишкек-Дубай-Бишкек, второй БЕСПЛАТНО! Мы также можем подобрать отели в ОАЭ по самым выгодным ценам! Медицинская страховка в ПОДАРОК!</strong></span></span></span></p>\n', '2015-02-18 11:52:00', '', '', '', '88acf18da8a559a93b3c4e75855e87ec.jpg', 0, 0, 'on'),
 (18, 'Акция на авиабилеты в Стамбул !', 'akcija_na_aviabilety_v_stambul__', '<p><span >Акция на авиабилеты в Стамбул !&nbsp;</span><br />\n<span >', '2015-02-18 10:33:00', 'авиабилеты бишкек', 'дешевые авиабилеты в Стамбул из Бишкека турецкие авиалинии', 'авиабилеты в Стамбул из бишкека', '9fc5d78f8fa0e6c30f6d68e2e5f30d9d.png', 1, 0, 'on'),
@@ -186,7 +186,7 @@ INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `contacts`
+-- Table structure for table `contacts`
 --
 
 DROP TABLE IF EXISTS `contacts`;
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `contacts`
+-- Dumping data for table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `adress`, `phone`, `email`, `coords`, `social_text`, `social_vk`, `social_fb`, `social_tw`, `social_ok`, `social_insta`) VALUES
@@ -215,7 +215,7 @@ INSERT INTO `contacts` (`id`, `adress`, `phone`, `email`, `coords`, `social_text
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `feedback`
+-- Table structure for table `feedback`
 --
 
 DROP TABLE IF EXISTS `feedback`;
@@ -232,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `feedback`
+-- Dumping data for table `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `text`, `date`, `ip`, `read`) VALUES
@@ -244,7 +244,7 @@ INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `text`, `date`, `ip`, `r
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `feedback_email`
+-- Table structure for table `feedback_email`
 --
 
 DROP TABLE IF EXISTS `feedback_email`;
@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `feedback_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `feedback_email`
+-- Dumping data for table `feedback_email`
 --
 
 INSERT INTO `feedback_email` (`email`) VALUES
@@ -262,7 +262,29 @@ INSERT INTO `feedback_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `hotels`
+-- Table structure for table `groups`
+--
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `name`, `description`) VALUES
+(1, 'admin', 'Administrator'),
+(2, 'members', 'General User');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hotels`
 --
 
 DROP TABLE IF EXISTS `hotels`;
@@ -286,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `hotels` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
--- Дамп данных таблицы `hotels`
+-- Dumping data for table `hotels`
 --
 
 INSERT INTO `hotels` (`id`, `name`, `status`, `site`, `phone`, `fax`, `email`, `rooms`, `distoport`, `beachl`, `image`, `text`, `coords`, `order`, `active`) VALUES
@@ -302,7 +324,7 @@ INSERT INTO `hotels` (`id`, `name`, `status`, `site`, `phone`, `fax`, `email`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `hotels_images`
+-- Table structure for table `hotels_images`
 --
 
 DROP TABLE IF EXISTS `hotels_images`;
@@ -315,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `hotels_images` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
 
 --
--- Дамп данных таблицы `hotels_images`
+-- Dumping data for table `hotels_images`
 --
 
 INSERT INTO `hotels_images` (`id`, `image`, `order`, `hotel_id`) VALUES
@@ -376,7 +398,7 @@ INSERT INTO `hotels_images` (`id`, `image`, `order`, `hotel_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `hotel_services`
+-- Table structure for table `hotel_services`
 --
 
 DROP TABLE IF EXISTS `hotel_services`;
@@ -390,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `hotel_services` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `hotel_services_service`
+-- Table structure for table `hotel_services_service`
 --
 
 DROP TABLE IF EXISTS `hotel_services_service`;
@@ -404,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `hotel_services_service` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `hotel_service_typeservice`
+-- Table structure for table `hotel_service_typeservice`
 --
 
 DROP TABLE IF EXISTS `hotel_service_typeservice`;
@@ -419,7 +441,22 @@ CREATE TABLE IF NOT EXISTS `hotel_service_typeservice` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `news`
+-- Table structure for table `login_attempts`
+--
+
+DROP TABLE IF EXISTS `login_attempts`;
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(15) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `time` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
 --
 
 DROP TABLE IF EXISTS `news`;
@@ -442,7 +479,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `category_id`, `order`, `views`, `active`) VALUES
@@ -459,7 +496,7 @@ INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partners`
+-- Table structure for table `partners`
 --
 
 DROP TABLE IF EXISTS `partners`;
@@ -472,7 +509,7 @@ CREATE TABLE IF NOT EXISTS `partners` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
--- Дамп данных таблицы `partners`
+-- Dumping data for table `partners`
 --
 
 INSERT INTO `partners` (`id`, `image`, `order`, `active`) VALUES
@@ -500,7 +537,7 @@ INSERT INTO `partners` (`id`, `image`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `requests`
+-- Table structure for table `requests`
 --
 
 DROP TABLE IF EXISTS `requests`;
@@ -523,7 +560,7 @@ CREATE TABLE IF NOT EXISTS `requests` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `requests`
+-- Dumping data for table `requests`
 --
 
 INSERT INTO `requests` (`id`, `country`, `rooms`, `price`, `name`, `phone`, `email`, `text`, `date`, `ip`, `read`, `stars`, `places`, `days`) VALUES
@@ -537,7 +574,7 @@ INSERT INTO `requests` (`id`, `country`, `rooms`, `price`, `name`, `phone`, `ema
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `requests_email`
+-- Table structure for table `requests_email`
 --
 
 DROP TABLE IF EXISTS `requests_email`;
@@ -546,7 +583,7 @@ CREATE TABLE IF NOT EXISTS `requests_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `requests_email`
+-- Dumping data for table `requests_email`
 --
 
 INSERT INTO `requests_email` (`email`) VALUES
@@ -555,7 +592,7 @@ INSERT INTO `requests_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `reviews`
+-- Table structure for table `reviews`
 --
 
 DROP TABLE IF EXISTS `reviews`;
@@ -575,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `reviews_email`
+-- Table structure for table `reviews_email`
 --
 
 DROP TABLE IF EXISTS `reviews_email`;
@@ -584,7 +621,7 @@ CREATE TABLE IF NOT EXISTS `reviews_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `reviews_email`
+-- Dumping data for table `reviews_email`
 --
 
 INSERT INTO `reviews_email` (`email`) VALUES
@@ -593,7 +630,7 @@ INSERT INTO `reviews_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `services`
+-- Table structure for table `services`
 --
 
 DROP TABLE IF EXISTS `services`;
@@ -608,7 +645,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=65 ;
 
 --
--- Дамп данных таблицы `services`
+-- Dumping data for table `services`
 --
 
 INSERT INTO `services` (`id`, `text`, `image`, `order`, `active`, `elems`) VALUES
@@ -623,7 +660,7 @@ INSERT INTO `services` (`id`, `text`, `image`, `order`, `active`, `elems`) VALUE
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `services_hotel`
+-- Table structure for table `services_hotel`
 --
 
 DROP TABLE IF EXISTS `services_hotel`;
@@ -634,7 +671,7 @@ CREATE TABLE IF NOT EXISTS `services_hotel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `services_hotel`
+-- Dumping data for table `services_hotel`
 --
 
 INSERT INTO `services_hotel` (`hotel_id`, `service_id`, `elems`) VALUES
@@ -645,7 +682,7 @@ INSERT INTO `services_hotel` (`hotel_id`, `service_id`, `elems`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `slider`
+-- Table structure for table `slider`
 --
 
 DROP TABLE IF EXISTS `slider`;
@@ -659,7 +696,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
 --
--- Дамп данных таблицы `slider`
+-- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`id`, `text`, `image`, `order`, `active`) VALUES
@@ -672,7 +709,7 @@ INSERT INTO `slider` (`id`, `text`, `image`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tags`
+-- Table structure for table `tags`
 --
 
 DROP TABLE IF EXISTS `tags`;
@@ -685,7 +722,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Дамп данных таблицы `tags`
+-- Dumping data for table `tags`
 --
 
 INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
@@ -694,7 +731,7 @@ INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tours`
+-- Table structure for table `tours`
 --
 
 DROP TABLE IF EXISTS `tours`;
@@ -731,7 +768,7 @@ CREATE TABLE IF NOT EXISTS `tours` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
--- Дамп данных таблицы `tours`
+-- Dumping data for table `tours`
 --
 
 INSERT INTO `tours` (`id`, `name`, `url`, `country`, `price`, `image`, `datefrom`, `duration`, `dateto`, `hotel_id`, `type`, `placement`, `feed`, `room`, `outflight`, `backflight`, `priceinc`, `label`, `flightout`, `priceperone`, `order`, `active`, `valid`, `title`, `metatitle`, `desc`, `keyw`) VALUES
@@ -746,7 +783,7 @@ INSERT INTO `tours` (`id`, `name`, `url`, `country`, `price`, `image`, `datefrom
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `toursbuy`
+-- Table structure for table `toursbuy`
 --
 
 DROP TABLE IF EXISTS `toursbuy`;
@@ -764,7 +801,7 @@ CREATE TABLE IF NOT EXISTS `toursbuy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
--- Дамп данных таблицы `toursbuy`
+-- Dumping data for table `toursbuy`
 --
 
 INSERT INTO `toursbuy` (`id`, `name`, `email`, `phone`, `tour_id`, `payed`, `date`, `ip`, `read`) VALUES
@@ -778,7 +815,7 @@ INSERT INTO `toursbuy` (`id`, `name`, `email`, `phone`, `tour_id`, `payed`, `dat
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `toursbuy_email`
+-- Table structure for table `toursbuy_email`
 --
 
 DROP TABLE IF EXISTS `toursbuy_email`;
@@ -787,7 +824,7 @@ CREATE TABLE IF NOT EXISTS `toursbuy_email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `toursbuy_email`
+-- Dumping data for table `toursbuy_email`
 --
 
 INSERT INTO `toursbuy_email` (`email`) VALUES
@@ -796,7 +833,7 @@ INSERT INTO `toursbuy_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tours_images`
+-- Table structure for table `tours_images`
 --
 
 DROP TABLE IF EXISTS `tours_images`;
@@ -809,7 +846,7 @@ CREATE TABLE IF NOT EXISTS `tours_images` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
 
 --
--- Дамп данных таблицы `tours_images`
+-- Dumping data for table `tours_images`
 --
 
 INSERT INTO `tours_images` (`id`, `image`, `order`, `tour_id`) VALUES
@@ -857,7 +894,67 @@ INSERT INTO `tours_images` (`id`, `image`, `order`, `tour_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `vises`
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(15) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(255) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) unsigned DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) unsigned NOT NULL,
+  `last_login` int(11) unsigned DEFAULT NULL,
+  `active` tinyint(1) unsigned DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 'istrator', 'ADMIN', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_groups`
+--
+
+DROP TABLE IF EXISTS `users_groups`;
+CREATE TABLE IF NOT EXISTS `users_groups` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL,
+  `group_id` mediumint(8) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
+  KEY `fk_users_groups_users1_idx` (`user_id`),
+  KEY `fk_users_groups_groups1_idx` (`group_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `users_groups`
+--
+
+INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
+(1, 1, 1),
+(2, 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vises`
 --
 
 DROP TABLE IF EXISTS `vises`;
@@ -873,7 +970,7 @@ CREATE TABLE IF NOT EXISTS `vises` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
--- Дамп данных таблицы `vises`
+-- Dumping data for table `vises`
 --
 
 INSERT INTO `vises` (`id`, `name`, `url`, `text`, `order`, `active`) VALUES
@@ -930,7 +1027,7 @@ INSERT INTO `vises` (`id`, `name`, `url`, `text`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `widget`
+-- Table structure for table `widget`
 --
 
 DROP TABLE IF EXISTS `widget`;
@@ -943,7 +1040,7 @@ CREATE TABLE IF NOT EXISTS `widget` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 --
--- Дамп данных таблицы `widget`
+-- Dumping data for table `widget`
 --
 
 INSERT INTO `widget` (`id`, `title`, `text`, `order`) VALUES
@@ -959,6 +1056,17 @@ INSERT INTO `widget` (`id`, `title`, `text`, `order`) VALUES
 (50, 'main-text-1', 'Оставьте заявку и наш менеджер свяжется с Вами, как только найдет подходящий отель для Вас.', 0),
 (51, 'main-text-2', 'Теперь Вам не нужно самому искать отели, доверьте эту работу нам, Вам нужно только указать параметры отеля, а мы позаботимся об остальном сами.', 0),
 (52, 'Блог', 'блог', 0);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `users_groups`
+--
+ALTER TABLE `users_groups`
+  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
