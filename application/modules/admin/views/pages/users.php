@@ -1,2 +1,2 @@
 <?php
-Modules::run('users/view');
+echo Modules::run('users/view');
