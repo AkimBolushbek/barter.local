@@ -24,7 +24,7 @@
                 <td width="30%"><?= $entry['email'] ?></td>
                 <td width="30%"><?= $entry['first_name'] ?></td>
                 <td width="30%"><?= $entry['last_name'] ?></td>
-                <td width="30%"><?= $entry['phon'] ?></td>
+                <td width="30%"><?= $entry['phone'] ?></td>
                 <td><?= date('d.m.Y H:i', $entry['created_on'])?></td>
                 <td width="30px"><a href='/admin/<?= $module ?>/edit/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td width="30px"><a href='/admin/<?= $module ?>/delete/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-remove"></span></a></td>
