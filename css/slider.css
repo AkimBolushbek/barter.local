@@ -1,0 +1,54 @@
+
+.slider {width: 1000px;}
+/*
+#carousel li {}
+#carousel img {display: block; opacity: .5; cursor: pointer;}
+#carousel img:hover {opacity: 1;}
+#carousel .flex-active-slide img {opacity: 1; cursor: default;}*/
+
+/* Layout
+***********************/
+
+/*#container {padding: 60px 40px 100px;}*/
+
+/* Browser Resets
+*********************************/
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus  {outline: none;}
+.slides, .flex-control-nav, .flex-direction-nav {margin: 0;padding: 0;list-style: none;}
+.flex-control-nav {display: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+
+.flexslider {margin: 0 auto; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;}
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* FlexSlider Default Theme
+*********************************/
+
+.flexslider {zoom: 1;position: relative;}
+.flex-viewport { max-height: 436px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li {width: 20px;}
+
+/* Direction Nav */
+
+.flex-direction-nav {height: 0;font-size: 0;line-height: 0;}
+.flex-direction-nav a  {text-decoration: none;display: block;width: 24px;height: 30px;position: absolute;top: 37px;z-index: 10;overflow: hidden;cursor: pointer;}
+.flex-direction-nav .flex-prev {left: 0;background: url(../img/sample_icons/prev_icon.png) 0 0 no-repeat;}
+.flex-direction-nav .flex-next {right: 0; text-align: right;background: url(../img/sample_icons/next_icon.png) 0 0 no-repeat;}
+
+.slider ul li {}
+.slider ul li h1 {font-size: 22px;margin-bottom: 10px;text-align: center;padding: 0 10px;}
+.slider ul li p {font-size: 0;line-height: 0;padding: 0;margin: 0;}
+.slider ul li span {font-family: Arial, sans-serif;font-size: 14px;display: block;padding-top: 25px;}

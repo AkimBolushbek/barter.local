@@ -1,0 +1,1 @@
+[30-Mar-2015 06:06:28 UTC] PHP Fatal error:  Call to undefined function cut_str() in Z:\home\travelshop.local\www\application\modules\tours\views\tours.php on line 21

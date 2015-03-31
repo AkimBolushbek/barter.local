@@ -1,0 +1,355 @@
+/*main searh form*/
+
+#SearchForm {
+  width: 100%;
+}
+table.SearchTableForm tbody {
+   border:none;
+}
+table.SearchTableForm {
+  width: 890px;
+  border:none;
+}
+table.SearchTableForm table.mainTablePanel {
+   width: 100%;
+}
+table.SearchTableForm .innerWidth {
+   border:none;
+}
+ table.SearchTableForm table tr td.right_align {
+   display: block;
+ }
+  table.SearchTableForm table tr td {
+   display: block;
+   text-align: left;
+  }
+ table.SearchTableForm table tr td.right_align span {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+}
+ table.SearchTableForm table tr td select {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+table.SearchTableForm .combo1 {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+ }
+ table.SearchTableForm label.cb-disable {display: none;}
+ table.SearchTableForm label.cb-enable.selected {display: none;}
+
+ table.SearchTableForm table.innerWidth td table {
+   float: left;
+   margin-right: 60px;
+ }
+table.SearchTableForm  table td.leftBorder table {}
+table.SearchTableForm  table td.leftBorder table td span {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+ }
+ table.SearchTableForm table td.leftBorder table td select {
+   width: 320px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+
+table.SearchTableForm .search_tour html {
+   overflow: hidden;
+ }
+table.SearchTableForm span#mLbDateFrom {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+ }
+table.SearchTableForm .calendar {
+   width: 192px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+   line-height: 30px;
+   background-image: none;
+   padding: 0 10px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+table.SearchTableForm span#mNightsFrom, span#mNightsTill {
+   float: left;
+   width: 20px;
+ }
+table.SearchTableForm span#mNightsTill {
+   margin-top: 10px;
+ }
+table.SearchTableForm table td.leftBorder table td select#durationFrom,
+table.SearchTableForm table td.leftBorder table td select#durationTill {
+   width: 145px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+table.SearchTableForm table td.leftBorder table td select#durationFrom {
+   margin: -6px 0 18px 0;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+table.SearchTableForm .mainDivPanel table td.leftBorder {
+   float: left;
+   width: 200px;
+ }
+ table.SearchTableForm .mainDivPanel.panel2 .leftBorder td {
+   width: 200px;
+ }
+ table.SearchTableForm .mainDivPanel.panel2 .leftBorder td.AdultRow {
+   margin-bottom: -20px;
+  }
+  span#mLbAdult {
+   padding-bottom: 20px;
+  }
+table.SearchTableForm .mainDivPanel.panel3 {
+   margin-top: 20px;
+  }
+span#mLbRegionAny {
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+}
+div#RegionDiv {
+   background: none;
+   border: none;
+   height: 100%;
+}
+table.SearchTableForm tr:nth-child(3) td table tbody tr td table.innerWidth td:nth-child(4).leftBorder table {
+   width: 100px;
+   margin-left: 105px;
+}
+
+.search_tour iframe body {
+   overflow: hidden;
+}
+body {
+   height: auto;
+}
+table.SearchTableForm td#filter_panel {
+   margin-top: 25px;
+   font-family: Arial;
+   font-size: 15px;
+   line-height: 25px;
+   margin-bottom: 20px;
+}
+#SearchForm table.SearchTableForm tbody tr:nth-child(3) td table.mainTablePanel tbody tr.innerWidth td .mainDivPanel.panel3 table.innerWidth tbody tr:nth-child(2) table.innerWidth tbody tr td {
+   font-family: Arial;
+   font-size: 15px;
+   line-height: 25px;
+   text-align: center;
+}
+input#tbPriceFrom, input#tbPriceTo {
+   width: 70px;
+   text-align: right;
+   padding: 0 10px;
+   border: 0;
+   height: 30px;
+   margin: 0 0 0 10px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#tbPriceTo {
+
+}
+select#mDdlCurrencyType {
+   width: 110px;
+   padding: 0;
+   height: 30px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+select#mDdlSortType {
+    width: 110px;
+   padding: 0;
+   height: 30px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#searchbyname {
+   float: left;
+   height: 30px;
+   padding: 0;
+   border: 0;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+table.SearchTableForm table input {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#cbAllHotel {
+   float: left;
+}
+span#mLbHotelAny {
+   float: left;
+   display: inline-block;
+   line-height: 18px;
+   width: 48px;
+   margin-bottom: 19px;
+}
+#mUpButton table tr td:first-child {
+
+}
+input#mBnSearch {
+   width: 310px;
+   height: 38px;
+   line-height: 38px;
+   color: #fff;
+   background: #002983;
+   border:0;
+   margin: 100px 0 0 300px;
+   position: relative;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#mBnSearch:hover {
+   cursor: pointer;
+}
+div.stars, div.hotels, div.pansion {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+select#adultcnt, select#ddlChildSelect, select#ddlAge1, select#ddlAge2, select#ddlAge3 {
+   width: 36px;float: left;margin: 0 10px 0 0;
+}
+span#mLbInputChdsAge {
+   margin: 25px -50px -18px 0px;
+   float: right;
+   display: block;
+}
+select#ddlAge1 {margin: -2px 6px 0 0;width: 45px;}
+select#ddlAge2 {margin: -4px 6px 0 0;width: 45px;}
+select#ddlAge3 {margin: -6px 0 0 0;width: 45px;}
+
+.datepickerContainer {
+   left: -197px;
+   top: 25px;
+   background: #002983;
+   z-index: 11;
+   color: #fff;
+}
+
+label.cb-enable {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+   background: #fff;
+   margin: 0 0 0 -20px;
+   border-radius: 5px;
+   text-align: center;
+}
+.cb-enable span, .cb-disable span {
+   line-height: 30px;
+   padding: 0;
+}
+#mPnResult {
+   font-family: Arial;
+}
+#mPnResult div.MainResultPanel table.innerWidth {
+   border:0;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 30px rgba(50,50,50,0.7);
+   background: #fafafa;
+}
+.PagingBlock a {
+   text-decoration: none;
+   color: #32A434;
+}
+.PagingBlock a:hover {
+   color: #fdc900;
+}
+#mPnResult div.MainResultPanel table.innerWidth td {
+   text-align: center;
+}
+#mPnResult div.MainResultPanel table.innerWidth td i {
+   font-size: 0;
+   line-height: 0;
+}
+
+#mPnResult div.MainResultPanel table.innerWidth tbody tr:nth-child(2) td table td {
+   text-align: center;padding: 0;
+}
+table#gvResult tr.gvhr th {
+   text-align: center;
+   font-size: 12px;
+   padding: 5px;}
+
+#mPnResult div.MainResultPanel table.innerWidth tbody tr:nth-child(2) td table tr:first-child td {
+   padding: 5px;
+   font-size: 15px;
+   color: #002983;
+}
+#mLbResultTitle {
+   text-transform: uppercase;
+   font-weight: 700;
+   display: block;
+   padding: 15px 0 10px 0;
+   border-bottom: 1px dashed #002983;
+}
+.PagingBlock {
+   padding: 15px 5px 10px 0px;
+   text-align: center;
+   border-bottom: 1px dashed #002983;
+   border-top: 1px dashed #002983;
+   margin: 10px 0;
+}

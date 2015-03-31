@@ -1,0 +1,508 @@
+/**************************************************/
+/************* основные настройки *****************/
+/**************************************************/
+
+/*цвет шрифта*/
+body
+{
+    color: #000000;
+}
+
+
+
+/*Разделитель между ячейками*/
+td.leftBorder
+{
+    border-left-color:#D6D3CE;
+    
+    border-left-style:solid;
+}
+    
+/*Рамка над дивом с закруглеенными уголками*/
+table.mainTablePanel
+{
+    background-color:#D6D3CE; 
+}
+    
+/*Внутренний див с закругленными уголками*/
+ div.mainDivPanel
+{
+    background: #e2e2e2; /* old browsers */
+
+/*background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); 
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); 
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );  */
+}
+
+/*Задний фон элементов*/
+.bgec
+{
+    background-color:#D6D3CE;
+}
+
+
+/*Цвет кнопки поиска*/
+.button
+{
+     background: #e2e2e2; /* old browsers */
+
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* ie */
+}
+    
+/**************************************************/
+/******************* логотипы  ********************/
+/**************************************************/
+
+/*Указывает какой, как и откуда выводить логотип*/
+div.logo
+{
+    background-position: right;
+    background-image: url('../images/ptich3white.gif');
+    background-repeat: no-repeat;
+}
+
+/*Указывает какой, как и откуда выводить логотип календарика*/
+.calendar
+{
+    background-position: right;
+    background-image: url('../images/calendar_2.png');
+    background-repeat: no-repeat;
+}
+
+
+
+div.places
+{
+    padding-left: 20px;
+}
+
+/* места есть*/
+div.airPlacesAvailable
+{
+    background-image: url('../images/airoplan_green.jpg');
+}
+
+/* мест мало */
+div.airPlacesFew
+{
+    background-image: url('../images/airoplan_yellow.jpg');
+}
+
+/* мест нет */
+div.airPlacesDisable
+{
+    background-image: url('../images/airoplan_red.jpg');
+}
+/* места есть*/
+div.airPlacesAvailableBack
+{
+    background-image: url('../images/airoplan_green_Back.jpg');
+}
+
+/* мест мало */
+div.airPlacesFewBack
+{
+    background-image: url('../images/airoplan_yellow_Back.jpg');
+}
+
+/* мест нет */
+div.airPlacesDisableBack
+{
+    background-image: url('../images/airoplan_red_Back.jpg');
+}
+
+/* мгновенное подтверждение */
+div.hotelPlacesAvailable
+{
+    background-image: url('../images/house_green.jpg');
+}
+
+/* по запросу */
+div.hotelPlacesByReq
+{
+    background-image: url('../images/house_yelow.jpg');
+}
+
+/* отсутствуют */
+div.HotelPlacesDisable
+{
+    background-image: url('../images/house_red.jpg');
+    
+}
+
+
+
+/**************************************************/
+/**********  рекомендуемые настройки  *************/
+/**************************************************/
+
+/*размер шрифта*/
+body
+{
+    font-size: smaller;
+}
+
+/*таблица всех блоков формы поиска*/
+table.SearchTableForm
+{
+    border:1px;
+    border-style:none;
+}
+
+
+
+/* поле поиска отеля по названию*/
+.searchbyname
+{
+    text-align:left;
+    color:inherit;
+}
+
+
+
+/* размер поля ввода возраста детей*/
+.child-age 
+{
+    width:50px;
+    font-size:inherit;
+    color:inherit;
+}
+
+/* размер поля выбора города и направления*/
+.combo1
+{
+    width:180px;
+}
+
+/* скрывает бордюры таблиц*/
+.innerWidth
+    {
+        border-style:none;
+        border-width:1px;
+    }
+    
+/*Размещение кнопки поиска*/
+.butSearch
+{
+    text-align:right;
+}
+
+/****************************************************
+*****************Настройки календаря ****************
+****************************************************/
+/*Цвет доступных для выбора ячеек выбранного месяца*/
+tbody.datepickerDays td.datepickerSelected{
+	background-color:#C4C1BC;
+	color:#E6E6E6;
+}
+
+
+
+/*Цвет доступных дней, не входящих в выбранный месяц*/
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+	background-color:#C4C1BC;
+	color:#E6E6E6;
+}
+
+/*Цвет дней со спецпредложениями*/
+tbody.datepickerDays td.datepickerSpecialDays{
+	background-color:red;
+	color:#E6E6E6;
+}
+
+/*Цвет дней со спецпредложениями, не входящих в выбранный месяц*/
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSpecialDays {
+	background-color:#FAB6B1;
+	color:#E6E6E6;
+}
+
+/*Ячейка сегодняшнего дня, если он недоступен
+tbody.datepickerDays td.datepickerDisabled.datepickerSelected
+{
+    background-color:Red;
+    border-style:solid;
+    border-width:1px;
+    background-color:White;
+    color:Black;
+    border-color:Red;
+}*/
+
+/*Цвет недоступных дней, не входящих в выбранных месяц*/
+td.datepickerDisabled.datepickerNotInMonth a
+{
+    color: #C0C0C0;
+}
+
+
+/*Цвет дней, не доступных для выбора при наведении курсора*/
+td.datepickerDisabled a:hover, div.datepicker td.datepickerNotInMonth a:hover
+{
+    color: #A3A3A3;
+}
+
+/*Цвет при наведении на ссылку*/
+div.datepicker a:hover {
+	color: Gray;
+}
+
+/* Цвет дней недели */
+tr.datepickerDoW
+{
+    background-color: #C4C1BC;
+    color:White;
+}
+
+
+/* Цвет фона календаря */
+.datepickerContainer
+{
+    /*background-color:White;*/
+    background-color:#eeeeee;
+}
+
+/*Цвет номера недели при наведении*/
+tbody.datepickerDays th.datepickerWeek a:hover
+{
+    color:inherit;
+}
+
+/****************************************************
+***************** результаты   **********************
+****************************************************/
+#mPnLegend
+{
+    
+}
+
+/*Фон для ячеек без картинок в "легенде" */
+div.bglegend
+{
+    /*background-color: #c2d0e7;*/
+}
+
+div.places
+{
+    padding-left: 20px;
+}
+
+/* места есть*/
+div.airPlacesAvailable
+{
+    background-image: url('../images/airoplan_green.jpg');
+}
+
+/* мест мало */
+div.airPlacesFew
+{
+    background-image: url('../images/airoplan_yellow.jpg');
+}
+
+/* мест нет */
+div.airPlacesDisable
+{
+    background-image: url('../images/airoplan_red.jpg');
+}
+/* места есть*/
+div.airPlacesAvailableBack
+{
+    background-image: url('../images/airoplan_green_Back.jpg');
+}
+
+/* мест мало */
+div.airPlacesFewBack
+{
+    background-image: url('../images/airoplan_yellow_Back.jpg');
+}
+
+/* мест нет */
+div.airPlacesDisableBack
+{
+    background-image: url('../images/airoplan_red_Back.jpg');
+}
+
+/* мгновенное подтверждение */
+div.hotelPlacesAvailable
+{
+    background-image: url('../images/house_green.jpg');
+}
+
+/* по запросу */
+div.hotelPlacesByReq
+{
+    background-image: url('../images/house_yelow.jpg');
+}
+
+/* отсутствуют */
+div.HotelPlacesDisable
+{
+    background-image: url('../images/house_red.jpg');
+    
+}
+
+/* Удачная покупка  */
+div.isEmptyGoodPrice
+{
+    padding-left:16px;
+    text-align:left;
+    background-position: left;
+}
+
+div.isGoodPrice
+{
+    background-image: url('../images/hbp.gif');
+    padding-left:16px;
+    text-align:left;
+}
+
+/*Таблица вокруг блока результатов выборки*/
+    table.mainTableResultPanel
+    {
+        background-color:#D6D3CE;
+        
+    }
+/*внутренний див с результатами выборки*/
+    div.MainResultPanel
+    {
+        background-color:#eeeeee;
+    }
+   
+
+/*Текст заголовка дива с результатами*/
+.title
+{
+    background-color:#D6D3CE;
+    color:#eeeeee;
+    font-weight:bold;
+}
+
+/*Див, закрывающий див с результатами*/
+.titleClose
+{
+    background-color:#D6D3CE;
+    /*background-image: url('/images/close.gif'); скрыть или открыть картинку закрытия панели результатов*/
+    font-size:0px; /*скрываем "X" при наличии картинки закрытия*/
+}
+
+/* Настройки грида с результатами поиска*/
+div.gvResultDiv
+{
+    
+}
+
+.gvar
+{
+    background-color:#DBDBDB;
+}
+
+.gvgr
+{
+    background-color:White;
+}
+
+.gvhr
+{
+    background-color: gray;
+    color: White;
+    text-align: center;
+}
+
+.gvpaging
+{
+    text-align: center;
+}
+
+.gvResultDiv a:visited, .gvResultDiv a:hover, .gvResultDiv a
+{
+    color:#00549F;
+text-decoration:underline;
+}
+
+/* Цвет затемнения */
+.overlay {
+background-color: #eeeeee;
+}
+
+/* Цвета статусов туров (спец, горящий, прайс) */
+.spec
+{
+    color: #0000FF;
+}
+.hot
+{
+    color: #FF0000;
+}
+.price
+{
+    color: #000000;
+}
+
+/*Цвет надписи об отсутсвие данных*/
+div.nodata
+{
+    color: #FF0000;
+    font-weight:bold;
+}
+
+/*Цвет надписи о stop-sale'е*/
+div.isStop
+{
+    color: #FF0000;
+}
+
+
+
+
+
+table.SearchDuration *td
+{
+    text-align:center;
+}
+
+/* Цвета ячеек продолжительности туров*/
+.durYellow
+{
+    background-color: #F0E68C;
+}
+
+.durGreen
+{
+    background-color: #B2D4C2;
+}
+
+.durRed
+{
+    background-color: #F5ABB4;
+}
+
+
+/* Всплывающее окно со списком туров*/
+
+/*кнопка закрытия*/
+.close-tour-list-div
+{
+    background-color:#006EC7;
+    color:White;
+}
+
+/*Заголовок*/
+div.title-tour-list-div
+{
+    color:White;
+    background-color:#006EC7;
+}
+    
+/* окно */    
+div.sub-tours-list-div
+{
+    background-color:#eeeeee; 
+
+    -webkit-box-shadow: 0px 0px 5px #006EC7;
+    -moz-box-shadow: 0px 0px 5px #006EC7;
+    box-shadow: 0px 0px 5px #006EC7;
+}
