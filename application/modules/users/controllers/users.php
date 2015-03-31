@@ -210,7 +210,12 @@ class Users extends MX_Controller {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
 
-        //echo $entry['username']; die();
+        $hotels = Modules::run('groups/get', '');
+        $data['hotels'] = $hotels;
+
+        echo count($hotels);
+        die();
+
 
         if ($this->input->post('do') == $this->module . 'Edit') {
             $this->form_validation->set_rules('email', 'email', 'required|e-mail');

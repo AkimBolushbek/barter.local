@@ -40,6 +40,19 @@
             <input required name='email'  type="text" class="form-control" id="email">
         </div>
         <div class="form-group">
+            <label for="groups">Группа</label>
+            <select name="gropus" class="form-control" id="groups">
+<!--                <?php /*foreach ($groups as $group): */?>
+                    <option <?php
+/*                    if ($group['id'] == $entry['hotel_id']) {
+                        echo 'selected';
+                    }
+                    */?> value="<?/*= $hotel['id'] */?>"><?/*= $hotel['id'] . '. ' . $hotel['name'] */?></option>
+                --><?php /*endforeach; */?>
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="phone">Телефон</label>
             <input required name='phone' type="text" class="form-control" id="phone" >
         </div>

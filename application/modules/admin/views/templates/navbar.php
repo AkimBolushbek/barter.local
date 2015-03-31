@@ -19,16 +19,16 @@
                 ?> ><a href="/admin/main">Главная</a></li>
 
                 <li <?php
-                if ($this->uri->segment(2) == 'usrers') {
+                if ($this->uri->segment(2) == 'users') {
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/users">Пользователи</a></li>
 
                 <li <?php
-                if ($this->uri->segment(2) == 'tours') {
+                if ($this->uri->segment(2) == 'groups') {
                     echo "class=\"active\"";
                 }
-                ?> ><a href="/admin/tours">Туры</a></li>
+                ?> ><a href="/admin/groups">Группы пользователей</a></li>
                 <li <?php
                 if ($this->uri->segment(2) == 'widget') {
                     echo "class=\"active\"";

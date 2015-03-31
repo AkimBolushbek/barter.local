@@ -2,7 +2,10 @@
 
 class Users_model extends CI_Model {
 
+
     private $table_name = 'users';
+    private $primary_key = 'id';
+
     public function __construct() {
         $this->load->database();
     }
