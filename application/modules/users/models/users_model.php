@@ -2,7 +2,10 @@
 
 class Users_model extends CI_Model {
 
+
     private $table_name = 'users';
+    private $primary_key = 'id';
+
     public function __construct() {
         $this->load->database();
     }
@@ -21,9 +24,20 @@ class Users_model extends CI_Model {
             } else {
                 return false;
             }
+        } else {
+            if ($id) {
+                $query = $this->db->get($this->table_name);
+
+                return $query->row_array();
+            }
+            $query = $this->db->get($this->table_name);
+            if (count($query->result_array()) > 0) {
+                return $query->result_array();
+            } else {
+                return false;
+            }
         }
     }
-
     public function get_users($id = null) {
         if ($id) {
             $query = $this->db->get_where($this->table_name, array('id' => $id));
@@ -51,11 +65,8 @@ class Users_model extends CI_Model {
             'email' => $this->input->post('email'),
             'phone' => $this->input->post('phone'),
             'company' => $this->input->post('company'),
-            'group_id' => $this->input->post('group_id'),
             'created_on' => $date
         );
-
-
 
         $this->db->insert($this->table_name, $data);
         return $this->db->insert_id();
@@ -74,7 +85,6 @@ class Users_model extends CI_Model {
                 'email' => $this->input->post('email'),
                 'phone' => $this->input->post('phone'),
                 'company' => $this->input->post('company'),
-                'group_id' => $this->input->post('group_id'),
             );
 
             $this->db->where('id', $id);

@@ -40,15 +40,15 @@
             <input required name='email'  type="text" class="form-control" id="email">
         </div>
         <div class="form-group">
-            <label for="group_id">Группа</label>
-            <select name="group_id" class="form-control" id="group_id">
-                <?php foreach ($groups as $group): ?>
+            <label for="groups">Группа</label>
+            <select name="gropus" class="form-control" id="groups">
+<!--                <?php /*foreach ($groups as $group): */?>
                     <option <?php
-                    if ($group['name'] == 'User') {
+/*                    if ($group['id'] == $entry['hotel_id']) {
                         echo 'selected';
                     }
-                    ?> value="<?= $group['id'] ?>"><?= $group['name'] ?></option>
-                <?php endforeach; ?>
+                    */?> value="<?/*= $hotel['id'] */?>"><?/*= $hotel['id'] . '. ' . $hotel['name'] */?></option>
+                --><?php /*endforeach; */?>
             </select>
         </div>
 

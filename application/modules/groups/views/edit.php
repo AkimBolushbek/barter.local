@@ -8,6 +8,8 @@
 <div class="page-header">
     <h2>Редактирование модуля "<?= $module_name ?>"</h2>
 </div>
+<?= $entry['description'] ?>
+
 <?php echo form_open(uri_string());?>
 <div class="row" style="margin-bottom: 5px;">
     <div class="col-md-12">

@@ -1,1 +1,0 @@
-<?php echo Modules::run('groups/view'); ?>
