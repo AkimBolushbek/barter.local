@@ -11,6 +11,8 @@ class Users extends MX_Controller {
         $this->model = $this->users_model;
     }
 
+
+
     public function index() {
         $this->load->helper('url');
     }
@@ -174,6 +176,10 @@ class Users extends MX_Controller {
     public function view($for_front = false, $url = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
+
+        $groups = Modules::run('groups/get', '', true);
+        $data['groups'] = $groups;
+
         if (!$for_front) {
             if ($url) {
                 $data['entries'] = $this->model->get_by_url($url);
@@ -210,12 +216,8 @@ class Users extends MX_Controller {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
 
-        $hotels = Modules::run('groups/get', '');
-        $data['hotels'] = $hotels;
-
-        echo count($hotels);
-        die();
-
+        $groups = Modules::run('groups/get', '', true);
+        $data['groups'] = $groups;
 
         if ($this->input->post('do') == $this->module . 'Edit') {
             $this->form_validation->set_rules('email', 'email', 'required|e-mail');
@@ -258,6 +260,10 @@ class Users extends MX_Controller {
         $data['title'] = 'Административная панель';
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
+
+        $groups = Modules::run('groups/get', '', true);
+        $data['groups'] = $groups;
+
         if ($this->input->post('do') == $this->module . 'Add') {
             $this->form_validation->set_rules('username', 'Логин', 'required|trim|xss_clean');
             $this->form_validation->set_rules('firs_name', 'Имя', 'trim|xss_clean');
