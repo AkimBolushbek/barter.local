@@ -30,6 +30,24 @@ class Groups extends MX_Controller {
         }
     }
 
+
+    public function get($id = null, $for_front = false) {
+        if ($id) {
+            if ($for_front) {
+                return $this->groups_model->get($id, true);
+            } else {
+                return $this->groupss_model->get($id);
+            }
+        } else {
+            if ($for_front) {
+                return $this->groups_model->get('', true);
+            } else {
+                return $this->groups_model->get();
+            }
+        }
+    }
+
+
     public function edit($id = null) {
         global $object;
         $object = 'group';//blog
