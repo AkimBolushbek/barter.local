@@ -11,6 +11,8 @@ class Users extends MX_Controller {
         $this->model = $this->users_model;
     }
 
+
+
     public function index() {
         $this->load->helper('url');
     }
