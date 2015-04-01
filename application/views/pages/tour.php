@@ -1,1 +1,1 @@
-    <?= Modules::run('tours/view', true, $url) ?>
+<?= Modules::run('tours/view', true, $url) ?>

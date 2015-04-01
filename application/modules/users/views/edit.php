@@ -47,6 +47,18 @@
             <input required name='email' value="<?= $entry['email'] ?>" type="text" class="form-control" id="email">
         </div>
         <div class="form-group">
+            <label for="group_id">Группа</label>
+            <select name="group_id" class="form-control" id="group_id">
+                <?php foreach ($groups as $group): ?>
+                    <option <?php
+                    if ($group['id'] == $entry['group_id']) {
+                        echo 'selected';
+                    }
+                    ?> value="<?= $group['id'] ?>"><?= $group['name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="phone">Телефон</label>
             <input required name='phone' value="<?= $entry['phone'] ?>" type="text" class="form-control" id="phone" >
         </div>
