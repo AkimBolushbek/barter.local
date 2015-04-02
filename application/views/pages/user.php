@@ -1,1 +1,1 @@
-<?= Modules::run('users/view', true, $url) ?>
+<?= Modules::run('user', true) ?>

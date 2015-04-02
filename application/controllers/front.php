@@ -10,7 +10,7 @@ class Front extends MX_Controller {
     }
 
     public function main() {
-        $this->load->view('pages/users');
+        $this->load->view('pages/user');
     }
 
     public function about() {
@@ -21,12 +21,6 @@ class Front extends MX_Controller {
         $this->load->view('pages/about', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
-    }
-
-    public function users() {
-        $data['title'] = 'Авторизация';
-        $this->load->view('templates/metahead', $data);
-        $this->load->view('pages/users', $data);
     }
 
     public function contacts() {

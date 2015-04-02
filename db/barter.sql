@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2015 at 10:55 AM
+-- Generation Time: Apr 02, 2015 at 08:44 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `admins`
 --
 
-DROP TABLE IF EXISTS `admins`;
 CREATE TABLE IF NOT EXISTS `admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
@@ -51,7 +50,6 @@ INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`)
 -- Table structure for table `allreviews`
 --
 
-DROP TABLE IF EXISTS `allreviews`;
 CREATE TABLE IF NOT EXISTS `allreviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -83,7 +81,6 @@ INSERT INTO `allreviews` (`id`, `name`, `text`, `date`, `ip`, `read`, `order`, `
 -- Table structure for table `allreviews_email`
 --
 
-DROP TABLE IF EXISTS `allreviews_email`;
 CREATE TABLE IF NOT EXISTS `allreviews_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -101,7 +98,6 @@ INSERT INTO `allreviews_email` (`email`) VALUES
 -- Table structure for table `backcall`
 --
 
-DROP TABLE IF EXISTS `backcall`;
 CREATE TABLE IF NOT EXISTS `backcall` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -134,7 +130,6 @@ INSERT INTO `backcall` (`id`, `name`, `phone`, `date`, `ip`, `read`) VALUES
 -- Table structure for table `backcall_email`
 --
 
-DROP TABLE IF EXISTS `backcall_email`;
 CREATE TABLE IF NOT EXISTS `backcall_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -152,7 +147,6 @@ INSERT INTO `backcall_email` (`email`) VALUES
 -- Table structure for table `blog`
 --
 
-DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -186,10 +180,32 @@ INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ci_sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+  `session_id` varchar(40) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `user_agent` varchar(250) NOT NULL,
+  `last_activity` datetime NOT NULL,
+  `user_data` varchar(250) NOT NULL,
+  PRIMARY KEY (`session_id`),
+  KEY `ci_sessions_timestamp` (`user_agent`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('05a5c4b83441d477b54401e3c0d9cc6d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36', '0000-00-00 00:00:00', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `adress` varchar(255) NOT NULL,
@@ -218,7 +234,6 @@ INSERT INTO `contacts` (`id`, `adress`, `phone`, `email`, `coords`, `social_text
 -- Table structure for table `feedback`
 --
 
-DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -247,7 +262,6 @@ INSERT INTO `feedback` (`id`, `name`, `phone`, `email`, `text`, `date`, `ip`, `r
 -- Table structure for table `feedback_email`
 --
 
-DROP TABLE IF EXISTS `feedback_email`;
 CREATE TABLE IF NOT EXISTS `feedback_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -262,32 +276,9 @@ INSERT INTO `feedback_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
---
-
-DROP TABLE IF EXISTS `groups`;
-CREATE TABLE IF NOT EXISTS `groups` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `description` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `groups`
---
-
-INSERT INTO `groups` (`id`, `name`, `description`) VALUES
-(1, 'admin', 'Administrator'),
-(2, 'members', 'General User');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `hotels`
 --
 
-DROP TABLE IF EXISTS `hotels`;
 CREATE TABLE IF NOT EXISTS `hotels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -327,7 +318,6 @@ INSERT INTO `hotels` (`id`, `name`, `status`, `site`, `phone`, `fax`, `email`, `
 -- Table structure for table `hotels_images`
 --
 
-DROP TABLE IF EXISTS `hotels_images`;
 CREATE TABLE IF NOT EXISTS `hotels_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -401,7 +391,6 @@ INSERT INTO `hotels_images` (`id`, `image`, `order`, `hotel_id`) VALUES
 -- Table structure for table `hotel_services`
 --
 
-DROP TABLE IF EXISTS `hotel_services`;
 CREATE TABLE IF NOT EXISTS `hotel_services` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -415,7 +404,6 @@ CREATE TABLE IF NOT EXISTS `hotel_services` (
 -- Table structure for table `hotel_services_service`
 --
 
-DROP TABLE IF EXISTS `hotel_services_service`;
 CREATE TABLE IF NOT EXISTS `hotel_services_service` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `service_id` int(11) NOT NULL,
@@ -429,7 +417,6 @@ CREATE TABLE IF NOT EXISTS `hotel_services_service` (
 -- Table structure for table `hotel_service_typeservice`
 --
 
-DROP TABLE IF EXISTS `hotel_service_typeservice`;
 CREATE TABLE IF NOT EXISTS `hotel_service_typeservice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -444,14 +431,13 @@ CREATE TABLE IF NOT EXISTS `hotel_service_typeservice` (
 -- Table structure for table `login_attempts`
 --
 
-DROP TABLE IF EXISTS `login_attempts`;
 CREATE TABLE IF NOT EXISTS `login_attempts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(15) NOT NULL,
   `login` varchar(100) NOT NULL,
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -459,7 +445,6 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
 -- Table structure for table `news`
 --
 
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -499,7 +484,6 @@ INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`
 -- Table structure for table `partners`
 --
 
-DROP TABLE IF EXISTS `partners`;
 CREATE TABLE IF NOT EXISTS `partners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -537,10 +521,22 @@ INSERT INTO `partners` (`id`, `image`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) NOT NULL,
+  `data` text COLLATE utf8_bin,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `requests`
 --
 
-DROP TABLE IF EXISTS `requests`;
 CREATE TABLE IF NOT EXISTS `requests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country` varchar(255) NOT NULL,
@@ -577,7 +573,6 @@ INSERT INTO `requests` (`id`, `country`, `rooms`, `price`, `name`, `phone`, `ema
 -- Table structure for table `requests_email`
 --
 
-DROP TABLE IF EXISTS `requests_email`;
 CREATE TABLE IF NOT EXISTS `requests_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -595,7 +590,6 @@ INSERT INTO `requests_email` (`email`) VALUES
 -- Table structure for table `reviews`
 --
 
-DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE IF NOT EXISTS `reviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -615,7 +609,6 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 -- Table structure for table `reviews_email`
 --
 
-DROP TABLE IF EXISTS `reviews_email`;
 CREATE TABLE IF NOT EXISTS `reviews_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -630,10 +623,30 @@ INSERT INTO `reviews_email` (`email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `roles`
+--
+
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(30) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `parent_id`, `name`) VALUES
+(1, 0, 'User'),
+(2, 0, 'Admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services`
 --
 
-DROP TABLE IF EXISTS `services`;
 CREATE TABLE IF NOT EXISTS `services` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` varchar(255) NOT NULL,
@@ -663,7 +676,6 @@ INSERT INTO `services` (`id`, `text`, `image`, `order`, `active`, `elems`) VALUE
 -- Table structure for table `services_hotel`
 --
 
-DROP TABLE IF EXISTS `services_hotel`;
 CREATE TABLE IF NOT EXISTS `services_hotel` (
   `hotel_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
@@ -685,7 +697,6 @@ INSERT INTO `services_hotel` (`hotel_id`, `service_id`, `elems`) VALUES
 -- Table structure for table `slider`
 --
 
-DROP TABLE IF EXISTS `slider`;
 CREATE TABLE IF NOT EXISTS `slider` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` varchar(255) NOT NULL,
@@ -712,7 +723,6 @@ INSERT INTO `slider` (`id`, `text`, `image`, `order`, `active`) VALUES
 -- Table structure for table `tags`
 --
 
-DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -734,7 +744,6 @@ INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
 -- Table structure for table `tours`
 --
 
-DROP TABLE IF EXISTS `tours`;
 CREATE TABLE IF NOT EXISTS `tours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL COMMENT 'required',
@@ -786,7 +795,6 @@ INSERT INTO `tours` (`id`, `name`, `url`, `country`, `price`, `image`, `datefrom
 -- Table structure for table `toursbuy`
 --
 
-DROP TABLE IF EXISTS `toursbuy`;
 CREATE TABLE IF NOT EXISTS `toursbuy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -818,7 +826,6 @@ INSERT INTO `toursbuy` (`id`, `name`, `email`, `phone`, `tour_id`, `payed`, `dat
 -- Table structure for table `toursbuy_email`
 --
 
-DROP TABLE IF EXISTS `toursbuy_email`;
 CREATE TABLE IF NOT EXISTS `toursbuy_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -836,7 +843,6 @@ INSERT INTO `toursbuy_email` (`email`) VALUES
 -- Table structure for table `tours_images`
 --
 
-DROP TABLE IF EXISTS `tours_images`;
 CREATE TABLE IF NOT EXISTS `tours_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -897,59 +903,93 @@ INSERT INTO `tours_images` (`id`, `image`, `order`, `tour_id`) VALUES
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(15) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `salt` varchar(255) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `activation_code` varchar(40) DEFAULT NULL,
-  `forgotten_password_code` varchar(40) DEFAULT NULL,
-  `forgotten_password_time` int(11) unsigned DEFAULT NULL,
-  `remember_code` varchar(40) DEFAULT NULL,
-  `created_on` int(11) unsigned NOT NULL,
-  `last_login` int(11) unsigned DEFAULT NULL,
-  `active` tinyint(1) unsigned DEFAULT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) NOT NULL DEFAULT '1',
+  `username` varchar(25) COLLATE utf8_bin NOT NULL,
+  `password` varchar(34) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `banned` tinyint(1) NOT NULL DEFAULT '0',
+  `ban_reason` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `newpass` varchar(34) COLLATE utf8_bin DEFAULT NULL,
+  `newpass_key` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `newpass_time` datetime DEFAULT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 'istrator', 'ADMIN', '0');
+INSERT INTO `users` (`id`, `role_id`, `username`, `password`, `email`, `banned`, `ban_reason`, `newpass`, `newpass_key`, `newpass_time`, `last_ip`, `last_login`, `created`, `modified`) VALUES
+(1, 2, 'admin', '$1$i75.Do4.$ROPRZjZzDx/JjqeVtaJLW.', 'admin@localhost.com', 0, NULL, NULL, NULL, NULL, '127.0.0.1', '2015-04-02 08:07:27', '2008-11-30 04:56:32', '2015-04-02 06:07:27'),
+(2, 1, 'user', '$1$bO..IR4.$CxjJBjKJ5QW2/BaYKDS7f.', 'akim.bb@mail.ru', 0, NULL, '$1$KM2.Li1.$qlro3BChhr1mXbUIRhyMS1', '28024a3255fee4ec0fd003ab40ff6115', '2015-04-02 08:47:48', '127.0.0.1', '2008-12-01 14:04:14', '2008-12-01 14:01:53', '2015-04-02 06:32:48');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_groups`
+-- Table structure for table `user_autologin`
 --
 
-DROP TABLE IF EXISTS `users_groups`;
-CREATE TABLE IF NOT EXISTS `users_groups` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) unsigned NOT NULL,
-  `group_id` mediumint(8) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
-  KEY `fk_users_groups_users1_idx` (`user_id`),
-  KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+CREATE TABLE IF NOT EXISTS `user_autologin` (
+  `key_id` char(32) COLLATE utf8_bin NOT NULL,
+  `user_id` mediumint(8) NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`key_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `users_groups`
+-- Table structure for table `user_profile`
 --
 
-INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
-(1, 1, 1),
-(2, 1, 2);
+CREATE TABLE IF NOT EXISTS `user_profile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `country` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user_profile`
+--
+
+INSERT INTO `user_profile` (`id`, `user_id`, `country`, `website`) VALUES
+(1, 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_temp`
+--
+
+CREATE TABLE IF NOT EXISTS `user_temp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password` varchar(34) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `activation_key` varchar(50) COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `user_temp`
+--
+
+INSERT INTO `user_temp` (`id`, `username`, `password`, `email`, `activation_key`, `last_ip`, `created`) VALUES
+(1, 'Akim', '$1$yR..TH2.$1.ZyIVgvDUgmkf23vMUGe/', 'akimbolushbek@gmail.com', '98812d9ba074e1db688025d981e1d271', '127.0.0.1', '2015-04-02 02:08:42'),
+(2, 'akim', '$1$g1/.pm2.$LT/HUu7/oO9JhQ7DF0xyj0', 'akim.bb@mail.ru', '55470e82b9a7aa45a857a6dfa61bfc5b', '127.0.0.1', '2015-04-02 02:10:38'),
+(3, 'Akim', '$1$vu4.Mz2.$zbNr8h7bThW0ZnNu/Ojyo/', 'akimbolushbek@gmail.com', '81fd4dc11a8b555cbad036a3ee42552b', '127.0.0.1', '2015-04-02 02:31:30');
 
 -- --------------------------------------------------------
 
@@ -957,7 +997,6 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- Table structure for table `vises`
 --
 
-DROP TABLE IF EXISTS `vises`;
 CREATE TABLE IF NOT EXISTS `vises` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -1030,7 +1069,6 @@ INSERT INTO `vises` (`id`, `name`, `url`, `text`, `order`, `active`) VALUES
 -- Table structure for table `widget`
 --
 
-DROP TABLE IF EXISTS `widget`;
 CREATE TABLE IF NOT EXISTS `widget` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -1056,17 +1094,6 @@ INSERT INTO `widget` (`id`, `title`, `text`, `order`) VALUES
 (50, 'main-text-1', 'Оставьте заявку и наш менеджер свяжется с Вами, как только найдет подходящий отель для Вас.', 0),
 (51, 'main-text-2', 'Теперь Вам не нужно самому искать отели, доверьте эту работу нам, Вам нужно только указать параметры отеля, а мы позаботимся об остальном сами.', 0),
 (52, 'Блог', 'блог', 0);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `users_groups`
---
-ALTER TABLE `users_groups`
-  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
